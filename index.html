@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGraph</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="IGraph">
+                <img src="img/logo.svg" alt="IGraph">
+                <ul class="menu">
+                    <li>
+                        <a href="#">
+                            Open file
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Save file
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btnMenu">
+                <ul id="operations" class="operations">
+                    <a href="#" class="btn" data-btn="1">
+                        Добавить вершину
+                    </a>
+                    <a href="#" class="btn" data-btn="2">
+                        Добавить ребро
+                    </a>
+                    <a href="#" class="btn" data-btn="3">
+                        Очистить всё
+                    </a>
+                    <a href="#" class="btn"  data-btn="4">
+                        Построить
+                    </a>
+                </ul>
+                <div id="descriptions" class="descriptions">
+                    <p class="instruction activeInst" data-inst="0">
+                        Выберите операцию
+                    </p>
+                    <p class="instruction" data-inst="1">
+                        Добавьте вершину
+                    </p>
+                    <p class="instruction" data-inst="2">
+                        Выберите две вершины, которые нужно соеденить 
+                    </p>
+                    <p class="instruction" data-inst="3">
+                        Рабочая область очищена!
+                    </p>
+                    <p class="instruction" data-inst="4">
+                        Готово!
+                    </p>
+                    <p class="instruction isConnected" data-inst="5">
+                        Граф должен быть связным
+                    </p>
+                </div>
+                
+            </div>
+            <div class="mainBody">
+                <ul class="mainSpace">
+                    <li>
+                        <canvas id="workSpace"class="workSpace" width="767" height="499"></canvas>
+                    </li>
+                    <li>
+                        <div class="matrixArea">
+                            <p>Матрица смежности</p>
+                            <div class="matrixSpace">
+                                <canvas id="matrix" class="matrix" height="360" width="360"></canvas>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p id="result" class="result">Длинна экономического дерева: </p>
+            </div>
+            
+        </div>
+        <div id="wrapper-modal">
+            <div id="overlay"></div>
+            <div id="modal-window">
+                <div class="dialog-window">
+                    <label for="textBox" class="content">
+                        Введите вес ребра
+                    </label>
+                    <form action="#">
+                        <input type="text" id="textBox" class="textBox" placeholder="Введите значение...">
+                        <div style='height: 40px;'>
+                            <p id='error' class="errorNone">Ошибка!</p>
+                        </div>
+                    </form>
+                    <div id="btnClose">
+                        <a href="#" class="btnClose">
+                            Ок
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="javascript/main.js"></script>
+</body>
+</html>
